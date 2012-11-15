@@ -4,11 +4,11 @@
 		%h1 SupFixCalendar
 		%h4.subheader Les emplois du temps de SUPINFO, enfin à la bonne heure !
 
-		%form.forms.columnar{"method" => "post", "action" => ""}
+		= form_tag "home/file_upload", :multipart => true , :class => "forms columnar" do 
 			%fieldset
 				%ul
 					%li
 						%label.bold{"for" => "ics"} Your .ics
-						%input#ics{"type" => "file", "size" => "40", "name" => "ics"}
-							%button.btn Go !
+						= file_field_tag "ics", :size => "40"
+						= submit_tag 'Go !', :class => "btn"
  
