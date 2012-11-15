@@ -1,5 +1,6 @@
 SupFixCalendar::Application.routes.draw do
   get "home/home"
+  post"home/upload"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
