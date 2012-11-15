@@ -1,2 +1,14 @@
-%h1 Home#home
-%p Find me in app/views/home/home.html.haml
+.row
+	.twothird.centered
+
+		%h1 SupFixCalendar
+		%h4.subheader Les emplois du temps de SUPINFO, enfin à la bonne heure !
+
+		%form.forms.columnar{"method" => "post", "action" => ""}
+			%fieldset
+				%ul
+					%li
+						%label.bold{"for" => "ics"} Your .ics
+						%input#ics{"type" => "file", "size" => "40", "name" => "ics"}
+							%button.btn Go !
+ 
