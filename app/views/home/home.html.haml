@@ -15,7 +15,7 @@
 				%ul
 					%li.custominput
 						%label.bold{"for" => "ics"} Your .ics
-						= file_field_tag "ics"
+						= file_field_tag "ics",  :required => true
 					%li
 						= submit_tag 'Go !', :class => "btn"
  

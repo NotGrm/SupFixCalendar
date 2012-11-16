@@ -14,7 +14,6 @@ class HomeController < ApplicationController
 
 		begin
 			file.write(converted.to_ical)
-			flash.now[:notice] = "Your download will start shortly ..."
 			send_file file.path
 		ensure
 			file.close
