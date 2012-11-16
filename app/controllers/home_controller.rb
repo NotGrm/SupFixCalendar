@@ -7,8 +7,28 @@ class HomeController < ApplicationController
 
   def file_upload
   	tmp = params[:ics].tempfile
-    
-    cals = Icalendar.parse(tmp)
+
+  	if File.extname(tmp) == ".ics"
+		file = Tempfile.new(["fixed", ".ics"], 'tmp')
+		converted = convert(tmp)
+
+		begin
+			file.write(converted.to_ical)
+			send_file file.path
+		ensure
+			file.close
+			file.unlink   # deletes the temp file
+		end
+	else
+		flash.now[:error] = 'Your file extension is not .ics'
+		render action: "home"
+	end
+
+  end
+
+  private
+  def convert(file)
+  	cals = Icalendar.parse(file)
 	cal = cals.first
 
 	converted = Icalendar::Calendar.new
@@ -21,15 +41,6 @@ class HomeController < ApplicationController
 		converted.add_event(event)
 	end
 
-	file = Tempfile.new(["fixed", ".ics"], 'tmp')
-	
-	begin
-		file.write(converted.to_ical)
-		send_file file.path
-	ensure
-		file.close
-		file.unlink   # deletes the temp file
-	end
-
+	return converted
   end
 end
