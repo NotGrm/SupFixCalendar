@@ -6,13 +6,17 @@
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	%body.bg-blue
-		.row
+		%a{"href" => "https://github.com/NotGrm/SupFixCalendar"}
+			%img{"style" => "position: absolute; top: 0; left: 0; border: 0;", "src" => "https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png", "alt" => "Fork me on GitHub"}
+		#maincontent.row
 			.twothird.centered.bg-white
-				= yield
-				%hr
-				%footer
-					%cite.row
-						.twofifth.push-threefifth
-							D'après une idée originale de 
-							=link_to "Pierrick Rouxel", "#"
+				.wrapper
+					= yield
+					%footer#footer
+						%cite.row
+							.twofifth.push-threefifth
+								D'après une idée originale de 
+								=link_to "Pierrick Rouxel", "http://pierrickrouxel.fr"
+
+	= render "shared/googleanalytics"
 
