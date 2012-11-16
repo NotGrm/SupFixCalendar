@@ -8,19 +8,20 @@ class HomeController < ApplicationController
   def file_upload
   	tmp = params[:ics].tempfile
 
-  	if File.extname(tmp) == ".ics"
+  	if File.extname(params[:ics].original_filename) == ".ics"
 		file = Tempfile.new(["fixed", ".ics"], 'tmp')
 		converted = convert(tmp)
 
 		begin
 			file.write(converted.to_ical)
+			flash.now[:notice] = "Your download will start shortly ..."
 			send_file file.path
 		ensure
 			file.close
-			file.unlink   # deletes the temp file
+			file.unlink
 		end
 	else
-		flash.now[:error] = 'Your file extension is not .ics'
+		flash.now[:error] = "Your file extension is not .ics"
 		render action: "home"
 	end
 

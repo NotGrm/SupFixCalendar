@@ -7,8 +7,10 @@
 	.twothird.centered
 		- if flash[:error]
 			%p.error= flash[:error]
-			
-		= form_tag "home/file_upload", :multipart => true , :class => "forms" do 
+		- if flash[:notice]
+			%p.notice= flash[:notice]
+
+		= form_tag "/home/file_upload", :multipart => true , :class => "forms" do 
 			%fieldset
 				%ul
 					%li.custominput
