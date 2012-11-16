@@ -4,11 +4,12 @@
 		%h1 SupFixCalendar
 		%h4.subheader Les emplois du temps de SUPINFO, enfin à la bonne heure !
 
-		%form.forms.columnar{"method" => "post", "action" => ""}
+		%form.forms{"method" => "post", "action" => ""}
 			%fieldset
 				%ul
-					%li
+					%li.custominput
 						%label.bold{"for" => "ics"} Your .ics
 						%input#ics{"type" => "file", "size" => "40", "name" => "ics"}
-							%button.btn Go !
+					%li
+						%button.btn Go !
  
