@@ -6,6 +6,7 @@ This webapp works simply by upload the original __ICS__, then it convert it and 
 
 #Gems
 I'd like to work with :
-- kube-rails : this gem allow me to use Kube CSS Framework
+- icalendar : this gem is able to parse an ics file
+- kube-rails : this gem allow the use of Kube CSS Framework
 - haml-rails
 - simple_form
