@@ -13,10 +13,16 @@
 				.wrapper
 					= yield
 					%footer#footer
-						%cite.row
-							.twofifth.push-threefifth
-								D'après une idée originale de 
-								=link_to "Pierrick Rouxel", "http://pierrickrouxel.fr"
+						.row
+							.third
+								%cite
+									Une création de 
+									=link_to "Jeremy Bertrand", "http://jbertrand.fr"
+
+							.onesixth.push-right
+								%cite
+									D'après une idée originale de 
+									=link_to "Pierrick Rouxel", "http://pierrickrouxel.fr"
 
 	= render "shared/googleanalytics"
 
