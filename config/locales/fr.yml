@@ -1,0 +1,9 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+fr:
+  baseline: "Les emplois du temps de SUPINFO, enfin à la bonne heure !"
+  created_by: "Une création de"
+  original_idea: "D'après une idée originale de"
+  ics: "Votre ics"
+  go: "Go !"
