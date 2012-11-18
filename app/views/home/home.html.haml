@@ -9,8 +9,8 @@
 			%fieldset
 				%ul
 					%li.custominput
-						%label.bold{"for" => "ics"} Your .ics
+						%label.bold{"for" => "ics"}=t :ics
 						= file_field_tag "ics",  :required => true
 					%li
-						= submit_tag 'Go !', :class => "btn"
+						= submit_tag t(:go), :class => "btn"
  

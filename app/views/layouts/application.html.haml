@@ -13,18 +13,18 @@
 				.wrapper
 					#header.text-centered
 						%h1 SupFixCalendar
-						%h4.subheader Les emplois du temps de SUPINFO, enfin à la bonne heure !
+						%h4.subheader=t :baseline
 					= yield
 					%footer#footer
 						.row
 							.third
 								%cite
-									Une création de 
+									=t :created_by
 									=link_to "Jeremy Bertrand", "http://jbertrand.fr"
 
 							.onesixth.push-right
 								%cite
-									D'après une idée originale de 
+									=t :original_idea
 									=link_to "Pierrick Rouxel", "http://pierrickrouxel.fr"
 
 	= render "shared/googleanalytics"
