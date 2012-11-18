@@ -20,7 +20,8 @@ class HomeController < ApplicationController
 			file.unlink
 		end
 	else
-		flash.now[:error] = "Your file extension is not .ics"
+		flash.now[:error] = t(:error)
+		# flash.now[:error] = "Your file extension is not .ics"
 		render action: "home"
 	end
 

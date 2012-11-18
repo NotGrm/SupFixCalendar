@@ -7,3 +7,4 @@ fr:
   original_idea: "D'après une idée originale de"
   ics: "Votre ics"
   go: "Go !"
+  error: "Votre fichier n'est pas un .ics"

@@ -7,3 +7,4 @@ en:
   original_idea: "Based on an original idea by"
   ics: "Your ics"
   go: "Go !"
+  error: "Your file extension is not .ics"
